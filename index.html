@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuMi Clicker - Ultimate Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="bj-music" src="billiejean.mp3" loop></audio>
+
+    <div class="game-container">
+        
+        <div class="column left-column">
+            <header>
+                <h1>🌟 LuMi Clicker 🌟</h1>
+                <div id="rebirth-display" style="font-size: 1rem; color: #00ffff; font-weight: bold; margin-bottom: 5px;">Rebirths: 0 (Multiplier: 1x)</div>
+                <div id="cookies" class="normal-size">0 LuMi's</div>
+                <div id="cps">0 LuMi/s | +1 per klik</div>
+                <div id="multiplier-display" style="display: none;">⚡ Multiplier: 1x</div>
+            </header>
+            
+            <div class="clicker-area">
+                <div style="position: relative;">
+                    <div id="lumi" class="lumi-button">🌟</div>
+                    <div id="combo-meter" style="font-size: 1.2rem; font-weight: bold; color: #ff00ff; margin-top: 10px; text-shadow: 0 0 8px #000; opacity: 0; transition: opacity 0.2s;">Combo: 0x 🔥</div>
+                </div>
+            </div>
+
+            <footer>
+                <button id="save-btn" class="sata-btn">Opslaan</button>
+                <button id="load-btn" class="sata-btn">Laden</button>
+                <button id="reset-btn" class="sata-btn">Reset</button>
+            </footer>
+        </div>
+        
+        <div class="column center-column" id="center-panel">
+            
+            <div class="gift-container">
+                <button id="gift-btn" class="gift-button">🎁 <span id="gift-text">Claim Cadeau!</span></button>
+            </div>
+
+            <div class="center-controls">
+                <button id="settings-btn" class="sata-btn">⚙️ Settings</button>
+                <button id="rebirth-btn" class="sata-btn success">🔄 Rebirth<br><span id="rebirth-cost" style="font-size:0.75rem; text-transform:none;">Kost: 1.000.000.000.000</span></button>
+            </div>
+
+            <div id="settings-panel" class="event-box hidden" style="border-color: #ff00ff; box-shadow: 0 0 20px #ff00ff;">
+                <h3>⚙️ Spel Instellingen</h3>
+                <p style="font-size:0.9rem; margin-bottom:10px;">Kies een aangepaste achtergrondkleur:</p>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 15px;">
+                    <button class="sata-btn theme-choice" data-theme="default">Standaard</button>
+                    <button class="sata-btn theme-choice" data-theme="dark">Deep Void</button>
+                    <button class="sata-btn theme-choice" data-theme="cosmic">Cosmic Rose</button>
+                    <button class="sata-btn theme-choice" data-theme="emerald">Emerald Sea</button>
+                    <button class="sata-btn theme-choice" data-theme="gold">Royal Gold</button>
+                    <button class="sata-btn theme-choice" data-theme="cyber">Cyberpunk</button>
+                </div>
+                <button id="close-settings" class="sata-btn danger">Sluiten</button>
+            </div>
+
+            <div id="minigame-invite" class="event-box hidden">
+                <h3>🎮 Play Mini Game?</h3>
+                <p>Win extra LuMi's of een dikke bonus!</p>
+                <div class="event-buttons">
+                    <button id="btn-yes" class="sata-btn success">Yes</button>
+                    <button id="btn-no" class="sata-btn danger">No</button>
+                </div>
+            </div>
+
+            <div id="minigame-area" class="event-box hidden">
+                <div id="minigame-content" style="width: 100%; height: auto; position: relative; overflow: hidden;"></div>
+            </div>
+
+            <div id="event-index-panel" class="event-box">
+                <h3>📖 Event Logboek</h3>
+                <p style="font-size: 0.85rem; color: #b399cc; margin-bottom: 10px;">Aantal keren dat events zijn geactiveerd:</p>
+                <div id="event-counters-list" style="text-align: left; font-size: 0.9rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;"></div>
+            </div>
+        </div>
+        
+        <div class="column right-column">
+            <div class="panel">
+                <h2>Winkeltje (Gebouwen)</h2>
+                <div id="shop-items"></div>
+            </div>
+
+            <div class="panel">
+                <h2>Upgrades</h2>
+                <div id="upgrade-items"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="LuMi Clicker.js"></script>
+</body>
+</html>
